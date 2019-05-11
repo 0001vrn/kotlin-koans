@@ -2,6 +2,7 @@ package i_introduction._3_Default_Arguments
 
 import util.TODO
 import util.doc2
+import java.lang.StringBuilder
 
 fun todoTask3(): Nothing = TODO(
     """
@@ -14,12 +15,27 @@ fun todoTask3(): Nothing = TODO(
     documentation = doc2(),
     references = { name: String -> JavaCode3().foo(name); foo(name) })
 
-fun foo(name: String): String = todoTask3()
+fun foo(name: String, number: Number = 42, toUpperCase: Boolean = false): String {
+    /**
+     * using var as reassignment is required at a later point.
+     */
+    var res = StringBuilder(name)
+    /**
+     * `if` is an expression, i.e. it returns a value.
+     * Therefore there is no ternary operator (condition ? then : else),
+     * because ordinary `if` works fine in this role.
+     * See http://kotlinlang.org/docs/reference/control-flow.html#if-expression
+     */
+    if(toUpperCase) {
+        res = StringBuilder(name.toUpperCase())
+    }
+    res.append(number)
+    return res.toString()
+}
 
 fun task3(): String {
-    todoTask3()
-//    return (foo("a") +
-//            foo("b", number = 1) +
-//            foo("c", toUpperCase = true) +
-//            foo(name = "d", number = 2, toUpperCase = true))
+    return (foo("a") +
+            foo("b", number = 1) +
+            foo("c", toUpperCase = true) +
+            foo(name = "d", number = 2, toUpperCase = true))
 }
