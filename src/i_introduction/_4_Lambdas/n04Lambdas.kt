@@ -26,8 +26,7 @@ fun isEven(el: Int): Boolean{
     return el%2==0
 }
 
-fun task4(collection: Collection<Int>): Boolean {
-    return !(collection.filter { x -> x%2 == 0  }.isEmpty())
+fun task4(collection: Collection<Int>): Boolean = !(collection.filter { x -> x%2 == 0  }.isEmpty())
 //    var hasEven: Boolean = false
 //    for(i in collection){
 //        if(isEven(i))
@@ -37,4 +36,3 @@ fun task4(collection: Collection<Int>): Boolean {
 //        }
 //    }
 //    return hasEven
-}
