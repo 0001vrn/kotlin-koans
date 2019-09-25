@@ -8,4 +8,9 @@ class N12ExtensionsOnCollectionsKtTest {
     fun testSort() {
         assertEquals(listOf(5, 2, 1), task12())
     }
+
+    @Test
+    fun testPrime() {
+        assertEquals("2 3 5 7 ", primesAsString("9"))
+    }
 }
