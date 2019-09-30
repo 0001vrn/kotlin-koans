@@ -28,7 +28,7 @@ fun sendMessageToClient (
     val email = client?.personalInfo?.email
 
 
-    if (message != null && email != null) {
+    if (email != null && message != null) {
         mailer.sendMessage(email, message)
     }
 }

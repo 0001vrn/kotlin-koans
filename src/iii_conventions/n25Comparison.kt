@@ -12,7 +12,7 @@ fun todoTask25(): Nothing = TODO(
         Tips: Make the class 'MyDate' implement 'Comparable'.
     """,
     documentation = doc25(),
-    references = { date: MyDate, comparable: Comparable<MyDate> -> }
+    references = { _: MyDate, _: Comparable<MyDate> -> }
 )
 
 fun task25(date1: MyDate, date2: MyDate): Boolean {
